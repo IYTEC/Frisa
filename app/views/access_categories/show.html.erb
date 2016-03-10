@@ -1,0 +1,14 @@
+<% @page_title = "Category #{@category.name}" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<% if !flash[:notice].blank? %>
+	<p><%= flash[:notice] %></p>
+<% end %>
+<%= link_to("Accessory Category Home", {:action => "index"}) %><br>
+<h2><%= @category.name %></h2>
+<ul>
+	<label>Name: </label> <%= @category.name %><br>
+	<label>Description: </label> <%= @category.description %><br>
+	<label>Created At: </label> <%= @category.created_at %><br>
+	<label>Updated At: </label> <%= @category.updated_at %><br>
+</ul> 

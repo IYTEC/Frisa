@@ -1,0 +1,20 @@
+<% @page_title = "Show accessory for #{@accessory.name}" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<% if !flash[:notice].blank? %>
+	<p><%= flash[:notice] %></p>
+<% end %>
+
+<%= link_to("Accessory home", {:action => "index"}) %><br>
+<h2><%= @accessory.name %></h2>
+<ul>
+	<label>Image</label><%= image_tag @accessory.photo.url(:small) %><br>
+	<label>Name: </label> <%= @accessory.name %><br>
+	<label>Features: </label> <%= @accessory.feature %><br>
+	<label>Category: </label> <%= @accessory.access_category.name if @accessory.access_category %> <br>
+	<label>Price: </label> <%= @accessory.price %><br>
+	<label>Other Info: </label> <%= @accessory.other_info %><br>
+	<label>Available: </label> <%= @accessory.available ? "Yes" : "No" %><br>
+	<label>Created At: </label> <%= @accessory.created_at %><br>
+	<label>Updated At: </label> <%= @accessory.updated_at %>
+</ul> 

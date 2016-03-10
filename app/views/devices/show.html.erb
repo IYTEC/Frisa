@@ -1,0 +1,16 @@
+<% @page_title = "Show Device" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<% if !flash[:notice].blank? %>
+	<p><%= flash[:notice] %></p>
+<% end %>
+<%= link_to("Device home", {:action => "index"}) %><br>
+<h2><%= @device.name %></h2>
+<ul>
+	<label>Name: </label> <%= @device.name %><br>
+	<label>Model: </label> <%= @device.model %><br>
+	<label>Description: </label> <%= @device.description %><br>
+	<label>Device Type: </label> <%= @device.device_type %><br>
+	<label>Created At: </label> <%= @device.created_at %><br>
+	<label>Updated At: </label> <%= @device.updated_at %><br>
+</ul> 

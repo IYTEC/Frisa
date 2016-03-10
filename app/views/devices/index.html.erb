@@ -1,0 +1,33 @@
+<% @page_title = "Device Home" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<% if !flash[:notice].blank? %>
+	<p><%= flash[:notice] %></p>
+<% end %>
+<h2>Devices</h2><br>
+<%= link_to("Add new device", {:action => "new"}) %>
+<table>
+<tr>
+	<th>Name</th>
+	<th>Model</th>
+	<th>Description</th>
+	<th>Device Type</th>
+	<th>Created at</th>
+	<th>Updated at</th>
+</tr>
+<% @devices.each do |device| %>
+<tr>
+	<td><%= device.name %></td>
+	<td><%= device.model %></td>
+	<td><%= device.description %></td>
+	<td><%= device.device_type %></td>
+	<td><%= device.created_at %></td>
+	<td><%= device.updated_at %></td>
+	<td>
+	<%= link_to("Show", {:action => "show", :id => device.id}, :class => "action show") %>
+	<%= link_to("Edit", {:action => "edit", :id => device.id}, :class => "action edit") %>
+	<%= link_to("Delete", {:action => "delete", :id => device.id}, :class => "action delete") %>
+	</td>
+</tr>
+<% end %>
+</table>

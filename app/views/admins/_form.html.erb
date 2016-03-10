@@ -1,0 +1,28 @@
+<%= error_messages_for(@admin) %>
+<table>
+	<tr>
+		<th><%= f.label(:f_name, "First Name") %></th>
+		<th><%= f.text_field(:f_name) %></th>
+	</tr>
+	<tr>
+		<th><%= f.label(:l_name, "Last Name") %></th>
+		<th><%= f.text_field(:l_name) %></th>
+	</tr>
+	<tr>
+		<th><%= f.label(:email) %></th>
+		<th><%= f.text_field(:email) %></th>
+	</tr>
+	<tr>
+		<th><%= f.label(:username, "Username") %></th>
+		<th><%= f.text_field(:username) %></th>
+	</tr>
+	<tr>
+ 		<th><%= f.label(:admin_type, "Admin Type") %></th>
+ 		<td><%= f.radio_button(:admin_type, 'Super') %> Super </td>
+ 		<td><%= f.radio_button(:admin_type, 'Regular') %> Regular </td>
+ 			</tr>
+	<tr>
+		<th><%= f.label(:password, "Password") %></th>
+		<th><%= f.password_field(:password) %></th>
+	</tr>
+</table>

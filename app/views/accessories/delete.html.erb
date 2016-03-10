@@ -1,0 +1,14 @@
+<% @page_title = "Delete Accessory" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<%= link_to("<< Back to Accessory  ", :action => "index") %>
+<h2>Delete Accessory</h2>
+<%= form_for(:accessory, :url => {:action => "destroy", :id => @accessory.id}) do |f| %>
+	<table>
+		<tr>
+			<p> Are you sure you want to delete this device <span style="font-size: 150%"><%= @accessory.name %></span></p>
+			
+		</tr>		
+	</table>
+	<%= submit_tag("Delete Device") %>
+<% end %>

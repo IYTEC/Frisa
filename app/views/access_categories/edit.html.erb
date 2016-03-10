@@ -1,0 +1,20 @@
+<% @page_title = "Edit Category" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<%= error_messages_for(@category) %>
+
+<%= link_to("<< Back to Accessories Category ", :action => "index") %>
+<h2>Edit Category</h2>
+<%= form_for(:category, :url => {:action => "update"}) do |f| %>
+	<table>
+		<tr>
+			<th>Name: </th>
+			<td><%= f.text_field(:name) %></td>
+		</tr>	
+		<tr>
+			<th>Description</th>
+			<td><%= f.text_field(:description) %></td>
+		</tr>		
+	</table>
+	<%= submit_tag("Update Category") %>
+<% end %>

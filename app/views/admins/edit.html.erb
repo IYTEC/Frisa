@@ -1,0 +1,10 @@
+<% @page_title = "Edit Admin" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<%= link_to("<< Back to Admin", {:action => "index"}) %>
+
+<h2>Update Admin User</h2>
+<%= form_for(:admin, :url => {:action => "update", :id => @admin.id}) do |f| %>
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+	<%= submit_tag("Update Admin") %>
+<% end %> 

@@ -1,0 +1,39 @@
+<% @page_title = "Accessory Home" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<% if !flash[:notice].blank? %>
+	<p><%= flash[:notice] %></p>
+<% end %>
+<h2>Acessories</h2><br>
+<%= link_to("Add new accessory", {:action => "new"}) %>
+<table>
+<tr>
+	<th>Image</th>
+	<th>Name</th>
+	<th>Features</th>
+	<th>Category</th>
+	<th>Price</th>
+	<th>Other Info</th>
+	<th>Available</th>
+	<th>Created at</th>
+	<th>Updated at</th>
+</tr>
+<% @accessories.each do |accessory| %>
+<tr>
+	<td><%= image_tag accessory.photo.url(:small) %></td>
+	<td><%= accessory.name %></td>
+	<td><%= accessory.feature %></td>
+	<td><%= accessory.access_category.name if accessory.access_category %></td>
+	<td><%= accessory.price %></td>
+	<td><%= accessory.other_info %></td>
+	<td><%= accessory.available ? "Yes" : "No" %></td>
+	<td><%= accessory.created_at %></td>
+	<td><%= accessory.updated_at %></td>
+	<td>
+		<%= link_to("Show", {:action => "show", :id => accessory.id}, :class => "action show") %>
+		<%= link_to("Edit", {:action => "edit", :id => accessory.id}, :class => "action edit") %>
+		<%= link_to("Delete", {:action => "delete", :id => accessory.id}, :class => "action delete") %>
+	</td>
+</tr>
+<% end %>
+</table>

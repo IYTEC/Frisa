@@ -1,0 +1,2 @@
+module AccessCategoriesHelper
+end

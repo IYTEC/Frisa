@@ -1,0 +1,28 @@
+<% @page_title = "New Device" %>
+
+<%= link_to("<< Back to Menu", {:controller => "access", :action => "index"}) %><br>
+<%= error_messages_for(@device) %>
+
+<%= link_to("<< Back to Devices ", :action => "index") %>
+<h2>Create Device</h2>
+<%= form_for(:device, :url => {:action => "create"}) do |f| %>
+	<table>
+		<tr>
+			<th>Name: </th>
+			<td><%= f.text_field(:name) %></td>
+		</tr>
+		<tr>
+			<th>Model: </th>
+			<td><%= f.text_field(:model) %></td>
+		</tr>	
+		<tr>
+			<th>Device Type</th>
+			<td><%= f.text_field(:device_type) %></td>
+		</tr>	
+		<tr>
+			<th>Description</th>
+			<td><%= f.text_field(:description) %></td>
+		</tr>		
+	</table>
+	<%= submit_tag("Create Device") %>
+<% end %>
